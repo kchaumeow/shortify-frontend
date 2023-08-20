@@ -1,10 +1,44 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import { ChakraProvider } from "@chakra-ui/react";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import LinkPage from "./pages/LinkPage";
+import { getLink } from "./api/DbControll";
+const router = createBrowserRouter([
+  {
+    element: <Layout />,
+    children: [
+      {
+        element: <Home />,
+        index: true,
+      },
+      {
+        element: <LinkPage />,
+        path: "/:hash",
+        loader: async ({ params }) => {
+          try {
+            const objectLink = await getLink(params.hash);
+            console.log(objectLink);
+            if (objectLink.error === undefined) location.href = objectLink.link;
+            return objectLink;
+          } catch (err) {
+            return {
+              error: err.name,
+              message: err.message,
+            };
+          }
+        },
+      },
+    ],
+  },
+]);
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <ChakraProvider>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  </ChakraProvider>
+);
