@@ -22,3 +22,8 @@ In this project I used:
 - Commitlint
 - React-router-dom
 - Fetch API
+
+## Appearance
+![image](https://github.com/kchaumeow/shortify-frontend/assets/71407757/3b28f115-1cc4-40cb-8629-7a16ffa0fda8)
+![image](https://github.com/kchaumeow/shortify-frontend/assets/71407757/34d853dc-8738-41fe-88bf-404cf73c2899)
+![image](https://github.com/kchaumeow/shortify-frontend/assets/71407757/dd0dc2c9-c43f-4eb0-a4c0-58fd782e05ea)
