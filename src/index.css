@@ -16,6 +16,7 @@ body {
   place-content: center;
   place-items: center;
   height: 100vh;
+  position: relative;
   background: linear-gradient(225deg, #B2F5EA 0%, #FFF 100%);
 }
 

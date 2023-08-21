@@ -22,7 +22,10 @@ const router = createBrowserRouter([
           try {
             const objectLink = await getLink(params.hash);
             console.log(objectLink);
-            if (objectLink.error === undefined) location.href = objectLink.link;
+            if (objectLink.error === undefined)
+              import.meta.env.VITE_REDIRECT_TYPE === "link"
+                ? (location.href = objectLink.link)
+                : location.replace(objectLink.link);
             return objectLink;
           } catch (err) {
             return {
