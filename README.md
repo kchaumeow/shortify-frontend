@@ -13,7 +13,7 @@ npm run dev
 
 Environmental variables:
 1. BACKEND_URL - contains full link on backend server
-2. REDIRECT_TYPE - contains `http` or `link` controls the type of redirect on the link page.
+2. REDIRECT_TYPE - contains `http` or `link` controls the type of redirect on the link page. For the record **_http better, because it's redirecting without any trace in the history_**
 ## Technology Stack
 In this project I used:
 - Vite
