@@ -9,33 +9,28 @@ import LinkPage from "./pages/LinkPage";
 import { getLink } from "./api/DbControll";
 const router = createBrowserRouter([
   {
-    element: <Layout />,
-    children: [
-      {
-        element: <Home />,
-        index: true,
-      },
-      {
-        element: <LinkPage />,
-        path: "/:hash",
-        loader: async ({ params }) => {
-          try {
-            const objectLink = await getLink(params.hash);
-            console.log(objectLink);
-            if (objectLink.error === undefined)
-              import.meta.env.VITE_REDIRECT_TYPE === "link"
-                ? (location.href = objectLink.link)
-                : location.replace(objectLink.link);
-            return objectLink;
-          } catch (err) {
-            return {
-              error: err.name,
-              message: err.message,
-            };
-          }
-        },
-      },
-    ],
+    element: <Home />,
+    index: true,
+  },
+  {
+    element: <LinkPage />,
+    path: "/:hash",
+    loader: async ({ params }) => {
+      try {
+        const objectLink = await getLink(params.hash);
+        console.log(objectLink);
+        if (objectLink.error === undefined)
+          import.meta.env.VITE_REDIRECT_TYPE === "link"
+            ? (location.href = objectLink.link)
+            : location.replace(objectLink.link);
+        return objectLink;
+      } catch (err) {
+        return {
+          error: err.name,
+          message: err.message,
+        };
+      }
+    },
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(

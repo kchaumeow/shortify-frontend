@@ -1,9 +1,10 @@
 import { Card } from "@chakra-ui/react";
-import { Outlet } from "react-router-dom";
-export default function Layout() {
+import { transform } from "framer-motion";
+export default function Layout({children, gapBottom = false}) {
+  console.log(gapBottom)
   return (
-    <Card textAlign="center" p="5" maxWidth={480} width="100%" gap="5">
-      <Outlet />
+    <Card textAlign="center" p="5" maxWidth={480} width="100%" gap="5" style={{transform: gapBottom ? `translateY(-15px)` : ``}}>
+      {children}
     </Card>
   );
 }
