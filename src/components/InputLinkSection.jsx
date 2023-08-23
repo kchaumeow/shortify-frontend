@@ -1,4 +1,4 @@
-import { Button, Input } from "@chakra-ui/react";
+import {Button, Input} from '@chakra-ui/react';
 
 export default function InputLinkSection({
   handleButtonShortifyClick,
@@ -6,7 +6,7 @@ export default function InputLinkSection({
   inputLinkValue,
 }) {
   return (
-    <form className="form" onSubmit={(e) => handleButtonShortifyClick(e)}>
+    <form className="form" onSubmit={handleButtonShortifyClick}>
       <Input
         type="url"
         placeholder="Pass your link here"
@@ -15,7 +15,7 @@ export default function InputLinkSection({
         required
       />
       <Button
-        isDisabled={inputLinkValue === ""}
+        isDisabled={inputLinkValue === ''}
         className="shortify_button"
         colorScheme="teal"
         type="submit"

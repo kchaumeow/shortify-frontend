@@ -2,16 +2,29 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-  Text,
   Button,
-} from "@chakra-ui/react";
+  Heading,
+  useToast,
+} from '@chakra-ui/react';
 
-export default function ResultLink({ hashedLink, handleCopyClick }) {
+export default function ResultLink({hashedLink}) {
+  const toast = useToast();
+  const handleCopyClick = () => {
+    navigator.clipboard.writeText(hashedLink);
+    toast({
+      title: 'You copied short-link!',
+      description: "Short-link was copied and now it's ready to paste.",
+      position: 'top-right',
+      status: 'success',
+      duration: 9000,
+      isClosable: true,
+    });
+  };
   return (
     <>
-      <Text as="b" fontSize="18px" lineHeight="27px">
+      <Heading as="h2" size="xl">
         Result
-      </Text>
+      </Heading>
       <InputGroup>
         <Input
           value={hashedLink}
