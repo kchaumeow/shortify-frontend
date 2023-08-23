@@ -22,7 +22,7 @@ export default function ResultLink({hashedLink}) {
   };
   return (
     <>
-      <Heading as="h2" size="xl">
+      <Heading as="h2" size="md">
         Result
       </Heading>
       <InputGroup>
