@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 export default function MissingLink() {
   return (
     <>
-      <Heading as="h2" size="xl">
+      <Heading as="h2" size="lg">
         Oops!
       </Heading>
       <Text fontSize="16px">
