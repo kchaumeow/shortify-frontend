@@ -31,7 +31,7 @@ export default function Home() {
 
   return (
     <Layout gapBottom={hashedLink === ''}>
-      <Heading as="h2" size="3xl">
+      <Heading as="h2" size="lg">
         Short your link
       </Heading>
       <Box
