@@ -8,7 +8,7 @@ export default function Layout({children, gapBottom = false}) {
       maxWidth={480}
       width="100%"
       gap="5"
-      style={{transform: gapBottom ? `translateY(-15px)` : ``}}
+      transform={`translateY(${gapBottom ? 'var(--layout-offset-top)' : 0})`}
     >
       {children}
     </Card>

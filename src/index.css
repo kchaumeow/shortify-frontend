@@ -18,6 +18,8 @@ body {
   height: 100vh;
   position: relative;
   background: linear-gradient(225deg, #B2F5EA 0%, #FFF 100%);
+  /* Height of 'result' label, result input tag and gap between them */
+  --layout-offset-top: calc(-32px - 0.75rem);
 }
 
 .form{
