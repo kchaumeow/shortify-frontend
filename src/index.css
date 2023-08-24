@@ -11,22 +11,21 @@ body {
   min-height: 100vh;
 }
 
-#root{
+#root {
   display: flex;
   place-content: center;
   place-items: center;
   height: 100vh;
   position: relative;
-  background: linear-gradient(225deg, #B2F5EA 0%, #FFF 100%);
+  background: linear-gradient(225deg, #b2f5ea 0%, #fff 100%);
   /* Height of 'result' label, result input tag and gap between them */
   --layout-offset-top: calc(-32px - 0.75rem);
 }
 
-.form{
+.form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
   width: 100%;
 }
-

@@ -1,7 +1,7 @@
 const config = {
   semi: true,
   tabWidth: 2,
-  max_line_length: 80,
+  printWidth: 80,
   bracketSpacing: false,
   singleQuote: true,
 };
