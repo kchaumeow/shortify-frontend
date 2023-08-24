@@ -20,6 +20,11 @@ Environmental variables:
 1. BACKEND_URL - contains full link on backend server
 2. REDIRECT*TYPE - contains `http` or `link` controls the type of redirect on the link page. For the record \*\*\_http better, because it's redirecting without any trace in the history*\*\*
 
+### How to run Prettier
+
+```
+npm run prettier
+```
 ## Technology Stack
 
 In this project I used:
