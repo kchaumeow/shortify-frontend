@@ -1,6 +1,5 @@
 import {Card} from '@chakra-ui/react';
 export default function Layout({children, gapBottom = false}) {
-  console.log(gapBottom);
   return (
     <Card
       textAlign="center"
