@@ -17,7 +17,6 @@ const router = createBrowserRouter([
     loader: async ({params}) => {
       try {
         const objectLink = await getLink(params.hash);
-        console.log(objectLink);
         if (objectLink.error === undefined)
           import.meta.env.VITE_REDIRECT_TYPE === 'link'
             ? (location.href = objectLink.link)
